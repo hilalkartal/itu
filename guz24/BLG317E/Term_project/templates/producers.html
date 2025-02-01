@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_index.css') }}">
+    <link rel="stylesheet" href="../static/style_index.css">
+    <title>Producers Dashboard</title>
+    <script>
+        function showMessage(message, error) {
+            if (error) {
+                alert(error);  // Display the error popup
+            } else if (message) {
+                alert(message);  // Display the success popup
+            }
+        }
+    </script>
+</head>
+<body onload="showMessage('{{ message|safe }}', '{{ error|safe }}')">
+
+    <header class="main-header">
+        <h1>Producers Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="album_basic.html">Albums</a></li>
+                <li><a href="artists.html">Artists</a></li>
+                <li><a href="song_basic.html">Songs</a></li>
+                <!-- <li><a href="collaborations.html">Collaborations</a></li> -->
+                <li><a href="composers.html">Composers</a></li>
+                <li><a href="contact">Contacts</a></li>
+                <li><a href="genres.html">Genres</a></li>
+                <li><a href="labels.html">Labels</a></li>
+                <li><a href="languages.html">Languages</a></li>
+                <li><a href="producers.html">Producers</a></li>
+                <li><a href="{{ url_for('logout') }}" class="logout-btn">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Manage Producers Table</h1>
+
+        <!-- Add/Update Inputs -->
+        <section id="add-update-section">
+            <h2>Add or Update Row</h2>
+            <form method="post">
+                <input class="input-box" type="number" name="id" placeholder="Producer ID (required for update)">
+                <input class="input-box" type="text" name="producers_name" placeholder="Producer Name">
+                <input class="input-box" type="number" name="number_of_songs" placeholder="Number of Songs">
+                <button type="submit" name="action" value="add">Add</button>
+                <button type="submit" name="action" value="update">Update</button>
+            </form>
+        </section>
+
+        <!-- Search Filters -->
+        <section id="search-section">
+            <h2>Search Table</h2>
+            <form method="post">
+                <input type="hidden" name="action" value="search">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Producer Id<br><input class="input-box" type="number" name="searchColumn1"></th>
+                            <th>Producer Name<br><input class="input-box" type="text" name="searchColumn2"></th>
+                            <th>Number of Songs<br><input class="input-box" type="number" name="searchColumn3"></th>
+                        </tr>
+                    </thead>
+                </table>
+                <button type="submit">Search</button>
+            </form>
+            <!-- Row count display -->
+            {% if row_count is not none %}
+            <p>{{ row_count }} row(s) found.</p>
+            {% endif %}
+        </section>
+
+        <!-- Table Display -->
+        <section id="table-section">
+            <h2>Producers Table</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Producer ID</th>
+                        <th>Producer Name</th>
+                        <th>Number of Songs</th>
+                        <th class="actions">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dynamic Content Here -->
+                    {% for row in data %}
+                    <tr>
+                        <td>{{ row['producer_id'] }}</td>
+                        <td>{{ row['producer_name'] }}</td>
+                        <td>{{ row['number_of_songs'] }}</td>
+                        <td class="actions">
+                            <form method="post" style="display: inline;">
+                                <input type="hidden" name="action" value="delete">
+                                <input type="hidden" name="id" value="{{ row['producer_id'] }}">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %} 
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 Your Company. All rights reserved.</p>
+            <a href="/contact"><button class="contact-btn">Contact Us</button></a>
+        </div>
+    </footer>    
+
+</body>
+</html>

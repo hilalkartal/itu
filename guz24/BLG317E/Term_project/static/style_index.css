@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #dfdfdf;
+    color: #333;
+}
+
+header.main-header {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+header.main-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+header.main-header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+header.main-header nav ul li {
+    margin: 0 15px;
+}
+
+header.main-header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+header.main-header nav ul li a:hover {
+    color: #dfdfdf;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+main section {
+    margin-bottom: 40px;
+    background: #fff;
+    border-radius: 20px; /* Soft edges */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px; /* Space between sections */
+    width: fit-content;
+}
+
+main section h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #222;
+}
+
+/* Link Styling for all Tables */
+main section h2 a {
+    text-decoration: none; /* Remove underlines */
+    color: inherit; /* Inherit the text color */
+}
+
+/* Hover effects for links within all tables */
+main section h2 a:hover {
+    color: #4f7158; /* Use a color from the theme on hover */
+}
+
+/* Form Inputs */
+form input[type="text"],
+form input[type="number"],
+form input[type="date"] {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+}
+
+/* For Add/Update Section */
+#add-update-section form input[type="text"],
+#add-update-section form input[type="number"],
+#add-update-section form input[type="date"] {
+    width: 25%; /* Set width to 25% for the Add/Update Section */
+    box-sizing: border-box;
+}
+
+/* For Search Section */
+#search-section form input[type="text"],
+#search-section form input[type="number"],
+#search-section form input[type="date"] {
+    width: 100%; /* Set width to 100% for the Search Section */
+    box-sizing: border-box;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate; /* Allows custom spacing */
+    border-spacing: 10px 5px; /* Adds space between cells */
+    text-align: left;
+    margin-top: 10px;
+}
+
+/* First Row of Headers */
+table thead tr:first-child th {
+    background: #4f7158;
+    color: #fff;
+    padding: 15px;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 15px; /* Oval corners for subheadings */
+    line-height: 1.4;
+}
+
+/* Second Row of Headers */
+table thead tr:nth-child(2) th {
+    background: #4a694f;
+    color: #fff;
+    padding: 12px;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 15px;
+    margin-top: 3px; /* Space between rows */
+}
+
+/* Alignment Adjustments */
+table thead th {
+    text-align: center; /* Centers text horizontally */
+    vertical-align: middle; /* Centers text vertically */
+}
+
+table thead th:first-child {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+table thead th:last-child {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+/* Styling for Alternating Rows */
+table tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+table tbody tr:hover {
+    background: #f1f1f1;
+}
+
+table td, table th {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    background: #222;
+    color: #fff;
+    padding: 10px 0;
+    font-size: 14px;
+    position: relative; /* Ensure the button stays within the footer */
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+.footer-content p {
+    margin: 0;
+}
+.contact-btn {
+    background-color: #4f7158; /* Button background color */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 25px; /* Soft, rounded edges */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.contact-btn:hover {
+    background-color: #3b5a43; /* Darken background on hover */
+}
+
+/*Button */
+button {
+    background-color: #4f7158;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius:25px; /* Rounded corners */
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+/* Button Hover Style */
+button:hover {
+    background-color: #3b5a43;
+}
+
+/* Styling for the "Show" Button within the table */
+button.show-btn {
+    background-color: #fff; /* Set background to match main section's background */
+    color: #4f7158; /* Button text color */
+    border: 2px solid #4f7158; /* Border color matching the text */
+    padding: 10px 20px; /* Increase padding for a larger button */
+    font-size: 14px; /* Increase font size */
+    font-weight: 500; /* Make the text bold */
+    border-radius: 25px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center; /* Ensure the text is centered */
+    display: block; /* Make the button appear on a new line */
+    margin-top: 10px; /* Space between the label and the button */
+}
+
+/* Button Hover Style */
+button.show-btn:hover {
+    background-color: #f1f1f1; /* Slightly darken background on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover for more emphasis */
+}
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .search-input {
+        width: 200px;
+    }
+} 
+
+input[type="number"],
+input[type="text"],
+input[type="date"] {
+    font-size: 14px;
+}
+
+input:focus {
+    border-color: #4f7158;
+    box-shadow: 0 0 5px rgba(79, 113, 88, 0.5);
+}
+
+.search-section-input,
+input[type="number"],
+input[type="text"],
+input[type="date"],
+button {
+    font-size: 14px;
+    border-radius: 25px;
+}
+
+@media (max-width: 768px) {
+    form input[type="text"],
+    form input[type="number"],
+    form input[type="date"],
+    form button {
+        width: 100%;
+    }
+
+    header.main-header nav ul {
+        flex-direction: column;
+    }
+
+    header.main-header nav ul li {
+        margin: 10px 0;
+    }
+}

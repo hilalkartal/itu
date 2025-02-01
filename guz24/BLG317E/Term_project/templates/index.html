@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_index.css') }}">
+    <link rel="stylesheet" href="../static/style_index.css">
+    <title>Admin Board</title>
+    <script>
+        function showMessage(message, error) {
+            if (error) {
+                alert(error);  // Display the error popup
+            } else if (message) {
+                alert(message);  // Display the success popup
+            }
+        }
+    </script>
+</head>
+<body onload="showMessage('{{ message|safe }}', '{{ error|safe }}')">
+
+    <header class="main-header">
+        <h1>Welcome to the Music Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href=#albums>Albums</a></li>
+                <li><a href=#artists>Artists</a></li>
+                <li><a href=#songs>Songs</a></li>
+                <!-- <li><a href=#collaborations>Collaborations</a></li> -->
+                <li><a href=#composers>Composers</a></li>
+                <li><a href=#genres>Genres</a></li>
+                <li><a href=#labels>Labels</a></li>
+                <li><a href=#languages>Languages</a></li>
+                <li><a href=#producers>Producers</a></li>
+                <li><a href="/contact">Contacts</a></li>
+                <li><a href="{{ url_for('logout') }}" class="logout-btn">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="albums">
+            <h2><a href="/album_basic.html">Albums</a></h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Album ID</th>
+                        <th>Album</th>
+                        <th>Release Date</th>
+                        <th>Number of Songs</th>
+                        <th>Label ID</th>
+                    </tr>
+                </thead>
+            </table>
+        </section>
+
+        <section id="artists">
+            <h2><a href="/artists.html">Artists</a></h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Artist ID</th>
+                        <th>Artist</th>
+                    </tr>
+                </thead>
+            </table>
+        </section>
+
+        <section id="songs">
+            <h2><a href="/song_basic.html">Song List</a></h2>
+            <table>
+                <thead>
+                    <!-- First Row -->
+                    <tr>
+                        <th>Song ID</th>
+                        <th>Title</th>
+                        <th>Duration</th>
+                        <th>Popularity</th>
+                        <th>Stream</th>
+                        <th>Explicit Content</th>
+                        <th>Artist ID</th>
+                    </tr>
+                    <!-- Second Row -->
+                    <tr>
+                        <th>Album ID</th>
+                        <th>Genre ID</th>
+                        <th>Label ID</th>
+                        <!-- <th>Collaboration ID</th> -->
+                        <th>Composer ID</th>
+                        <!-- <th>Release Date</th> -->
+                        <th>Producer ID</th>
+                        <th>Language ID</th>
+                    </tr>
+                </thead>
+
+            </table>
+        </section>
+
+        <section id="composers">
+            <h2><a href="/composers.html">Composers</a></h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Composer ID</th>
+                        <th>Composer</th>
+
+                    </tr>
+                </thead>
+            </table>
+        </section>     
+
+        <section id="genres">
+            <h2><a href="/genres.html">Genre</a></h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Genre ID</th>
+                        <th>Genre</th>
+                        <th>Number of Songs</th>
+
+                    </tr>
+                </thead>
+            </table>
+        </section>
+        
+        <section id="labels">
+            <h2><a href="/labels.html">Label</a></h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Label ID</th>
+                        <th>Label</th>
+
+                    </tr>
+                </thead>
+            </table>
+        </section>
+        
+        <section id="languages">
+            <h2><a href="/languages.html">Language</a></h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Language ID</th>
+                        <th>Language</th>
+                    </tr>
+                </thead>
+            </table>
+        </section>
+        
+        <section id="producers">
+            <h2><a href="/producers.html">Producer</a></h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Producer ID</th>
+                        <th>Producer</th>
+                        <th>Number of Songs</th>
+
+                    </tr>
+                </thead>
+            </table>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 Your Company. All rights reserved.</p>
+            <a href="/contact"><button class="contact-btn">Contact Us</button></a>
+        </div>
+    </footer>
+    
+</body>
+</html>
+
+

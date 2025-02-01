@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_index.css') }}">
+    <link rel="stylesheet" href="../static/style_index.css">
+    <title>Songs Dashboard</title>
+    <script>
+        function showMessage(message, error) {
+            if (error) {
+                alert(error);  // Display the error popup
+            } else if (message) {
+                alert(message);  // Display the success popup
+            }
+        }
+    </script>
+</head>
+<body onload="showMessage('{{ message|safe }}', '{{ error|safe }}')">
+
+    <header class="main-header">
+        <h1>Songs Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="albums.html">Albums</a></li>
+                <li><a href="artists.html">Artists</a></li>
+                <li><a href="songs.html">Songs</a></li>
+                <li><a href="collaborations.html">Collaborations</a></li>
+                <li><a href="composers.html">Composers</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="genres.html">Genres</a></li>
+                <li><a href="labels.html">Labels</a></li>
+                <li><a href="languages.html">Languages</a></li>
+                <li><a href="producers.html">Producers</a></li>
+                <li><a href="logout.html" class="logout-btn">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="songs">
+            <h2>Songs</h2>
+
+            <!-- Search Bar -->
+            <div class="search-container">
+                <form action="#" method="get">
+                    <input type="text" name="search" placeholder="Search..." class="search-input">
+                    <button type="submit" class="search-button">Search</button>
+                </form>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Song ID</th>
+                        <th>Title</th>
+                        <th>Duration</th>
+                        <th>Popularity</th>
+                        <th>Streams</th>
+                        <th>Explicit Content</th>
+                        <th>Artist ID</th>
+                        <th>Album ID</th>
+                        <th>Genre ID</th>
+                        <th>Lable ID</th>
+                        <th>Collaboration ID</th>
+                        <th>Composer ID</th>
+                        <th>Producer ID</th>
+                        <th>Language ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dynamic Content Here -->
+                    {% for row in data %}
+                    <tr>
+                        <td>{{ row['song_id'] }}</td>
+                        <td>{{ row['song_title'] }}</td>
+                        <td>{{ row['duration'] }}</td>
+                        <td>{{ row['popularity'] }}</td>
+                        <td>{{ row['stream'] }}</td>
+                        <td>{{ row['explicit_content'] }}</td>
+                        <td>{{ row['artist_id'] }}</td>
+                        <td>{{ row['album_id'] }}</td>
+                        <td>{{ row['genre_id'] }}</td>
+                        <td>{{ row['label_id'] }}</td>
+                        <td>{{ row['collaboration_id'] }}</td>
+                        <td>{{ row['composer_id'] }}</td>
+                        <td>{{ row['producer_id'] }}</td>
+                        <td>{{ row['language_id'] }}</td>
+                    </tr>
+                    {% endfor %}           
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 Your Company. All rights reserved.</p>
+            <a href="/contact"><button class="contact-btn">Contact Us</button></a>
+        </div>
+    </footer>
+</body>
+</html>

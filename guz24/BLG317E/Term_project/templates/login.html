@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_login.css') }}">
+    <link rel="stylesheet" href="../static/style_login.css">
+    <title>Login - Music Dashboard</title>
+    <script>
+        function showMessage(message, error) {
+            if (error) {
+                alert(error);  // Display the error popup
+            } else if (message) {
+                alert(message);  // Display the success popup
+            }
+        }
+    </script>
+</head>
+<body onload="showMessage('{{ message|safe }}', '{{ error|safe }}')">
+
+    <header class="main-header">
+        <h1>Welcome to the Music Dashboard</h1>
+    </header>
+
+    <main>
+        <section id="login">
+            <h2>Login to Your Account</h2>
+            <form action="{{ url_for('login') }}" method="POST">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="login-btn">Login</button>
+                    <a href="/forgot-password" class="forgot-password-link">Forgot Password?</a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 Your Company. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+

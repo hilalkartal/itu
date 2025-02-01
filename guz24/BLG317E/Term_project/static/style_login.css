@@ -1,0 +1,115 @@
+ /* General styling for the login page */
+ body {
+    background-color: #f4f4f4;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header.main-header {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+#login {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+#login h2 {
+    font-size: 30px; /* Larger text size for emphasis */
+    font-weight: 700; /* Bold text */
+    text-align: center; /* Center-align the title */
+    margin-bottom: 20px; /* Space below the title */
+    color: #4f7158; /* Matching theme color */
+    /*text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    background: linear-gradient(to right, #4f7158, #87a88a); /* Gradient background */
+    -webkit-background-clip: text; /* Text only clip for the gradient */
+    /*-webkit-text-fill-color: transparent; /* Makes the text transparent to show gradient */
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #222;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 14px;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #4f7158;
+    box-shadow: 0 0 5px rgba(79, 113, 88, 0.5);
+}
+
+.form-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-btn {
+    background-color: #4f7158;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    width: 50%;
+    transition: background-color 0.3s ease, transform 0.3s ease-in-out;
+}
+
+.login-btn:hover {
+    background-color: #3b5a43;
+    transform: scale(1.1);
+}
+
+.forgot-password-link {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #4f7158;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-password-link:hover {
+    color: #333;
+}
+
+footer {
+    text-align: center;
+    background: #222;
+    color: #fff;
+    padding: 10px 0;
+    font-size: 14px;
+}

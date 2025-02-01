@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #dfdfdf;
+    color: #333;
+}
+
+header.main-header {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+header.main-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+header.main-header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+header.main-header nav ul li {
+    margin: 0 15px;
+}
+
+header.main-header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+header.main-header nav ul li a:hover {
+    color: #dfdfdf;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+main section {
+    margin-bottom: 40px;
+    background: #fff;
+    border-radius: 20px; /* Soft edges */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px; /* Space between sections */
+}
+
+main section h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #222;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: separate; /* Allows custom spacing */
+    border-spacing: 10px 5px; /* Adds space between cells */
+    text-align: left;
+    margin-top: 10px;
+}
+
+/* Table Headers */
+table thead tr:first-child th {
+    background: #4f7158;
+    color: #fff;
+    padding: 15px;
+    font-weight: 500;
+    text-align: center;
+    border-radius: 15px;
+    line-height: 1.4;
+}
+
+table thead tr:nth-child(2) th {
+    background: #4a694f;
+    color: #fff;
+    padding: 12px;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 15px;
+    margin-top: 3px; /* Space between rows */
+}
+
+table thead th {
+    text-align: center; /* Centers text horizontally */
+    vertical-align: middle; /* Centers text vertically */
+}
+
+table thead th:first-child {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+table thead th:last-child {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+/* Styling for Alternating Rows */
+table tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+table tbody tr:hover {
+    background: #f1f1f1;
+}
+
+table td, table th {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Contact Information Section */
+#contact-info {
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 20px; /* Soft edges */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+#contact-info h2 {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.contact-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: #4f7158;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: #3b5a43; /* Darken background on hover */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    background: #222;
+    color: #fff;
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+footer .footer-content p {
+    margin: 0;
+}
+
+footer .footer-content .contact-btn {
+    margin-top: 10px;
+}
